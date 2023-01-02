@@ -1,0 +1,35 @@
+{{ define "error-content" }}
+
+<section class="relative block" style="height: 50px;">
+</section>
+<section class="relative py-16 bg-gray-300">
+   <div class="container-fluid">
+      <div class="text-center mt-5">
+         <div class="error mx-auto" data-text="{{ .StatusCode }}">{{ .StatusCode }}</div>
+         <p class="lead text-gray-800 mb-5">{{ .Error }}</p>
+         {{ if .Details }}
+         <p class="text-gray-500 mb-0">{{ .Details }}</p>
+         {{ end }}
+         {{ if .StackTrace }}
+         <p class="text-gray-500 mb-0">{{ .StackTrace }}</p>
+         {{ end }}
+      </div>
+   </div>
+</section>
+
+{{end}}
+
+{{ define "error" }}
+
+{{template "site-head" .}}
+{{template "site-header" .}}
+
+<main>
+
+{{ template "error-content" .}}
+  
+</main>
+
+{{template "site-footer" .}}
+
+{{end}}

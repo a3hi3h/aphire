@@ -1,0 +1,32 @@
+{{ define "404-content" }}
+
+<section class="relative block" style="height: 50px;">
+</section>
+<section class="relative py-16 bg-gray-300">
+
+
+<div class="mx-auto lg:mx-0 w-full pt-3 ">
+  <h1 class="text-center text-3xl font-bold pt-8 lg:pt-0">Oops! </h1>
+</div>
+
+<div class="mt-8 lg:mt-0 lg:w-full">
+    <div class="flex  items-center justify-center ">
+        <div class="max-w-full">
+            <img class="object-cover object-center w-full h-70 rounded-md" src="/assets/img/404.svg" alt="">
+        </div>
+    </div>
+</div>
+</section>
+
+{{end}}
+
+{{ define "404" }}
+
+{{template "site-head" .}}
+{{template "site-header" .}}
+
+{{ template "404-content" .}}
+
+{{template "site-footer" .}}
+
+{{end}}

@@ -1,0 +1,72 @@
+{{define "examcreate-content" }}
+
+<div class="mx-auto lg:mx-0 w-full pt-3 border-b-2 border-blue-500 ">
+  <h1 class="text-center text-3xl font-bold pt-8 lg:pt-0">Create Your Exam Round!</h1>
+</div>
+
+<div class="flex content-center items-center justify-center w-full h-full space-x-6">
+  <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
+    <form class="user" method="post" novalidate>
+      <div class="form-group mb-6">
+          <input type="text"
+            class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            name="examname" value="{{ $.form.examname }}" placeholder="Enter Exam Name...">
+      </div>
+
+      <div class="form-group mb-6">
+        <select name = "examtype" id="examtype" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+          <option selected>Choose exam type</option>
+          <option value="Python">Python</option>
+          <option value="Algo">Algorithm</option>
+          <option value="Datastructure">Datastructure</option>
+        </select>
+      </div>
+
+      <div class="form-group mb-6">
+        <select name = "examlevel" id="examlevel" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" >
+          <option selected >Choose exam level</option>
+          <option value="Beginer">Beginer</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+          <option value="Expert">Expert</option>
+        </select>
+      </div>
+
+      <div class="form-group mb-6">
+        <select  name = "examtime" id="examtime" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+          <option selected>Choose exam time</option>
+          <option value="30min">30min</option>
+          <option value="45min">45min</option>
+        </select>
+      </div>
+
+      <button class="inline-block px-7 py-3 bg-blue-500 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full">
+      Create!
+      </button>
+      
+    </form>
+
+  </div>
+ 
+  <div  class=" content-center justify-center">
+      <img
+          src="/assets/img/test.svg"
+          class="w-10/12"
+        />
+  </div>
+</div>
+
+{{end }}
+
+
+{{ define "examcreate" }}
+
+{{template "site-head" }}
+
+{{ template "app-sidebar"}}
+
+{{ template "examcreate-content" .}}
+
+</div> <!-- app sidebar-->
+
+{{end}}

@@ -1,0 +1,35 @@
+
+{{ define "home-content" }}
+<section class="relative block" style="height: 50px;">
+</section>
+<section class="relative py-16 bg-gray-300">
+<div class="container px-6 py-16 mx-auto">
+   <div class="items-center lg:flex">
+      <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
+         <img class="w-full h-full max-w-md" src="assets/img/campaign-bro.svg" alt="#">
+      </div>
+      <div class="w-full lg:w-1/2">
+         <div class="lg:max-w-lg">
+            <h1 class="text-2xl font-semibold text-blue-700 lg:text-3xl">We are your Hiring companion! </h1>
+            <p class="mt-4 font-medium text-gray-800"> Save your 30% hiring cost with us. </p>
+            <br>
+            <a href="/signup" class="px-4 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-lg lg:w-auto lg:mx-4 hover:bg-blue-700 focus:outline-none focus:bg-blue-700">
+            Sign Up!</a>
+         </div>
+      </div>
+   </div>
+</div>
+</section>
+{{ end }}
+
+
+{{template "site-head" .}}
+{{template "site-header" .}}
+
+<main>
+
+{{ template "home-content" .}}
+  
+</main>
+
+{{template "site-footer" .}}

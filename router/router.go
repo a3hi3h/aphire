@@ -10,6 +10,12 @@ import (
 
 // SetupRoutes setup router api
 func SetupRoutes(app *fiber.App) {
+
+	//Main site
+	app.Get("/", handler.HomePage)
+	app.Get("/about", handler.AboutPage)
+	app.Get("/pricing", handler.PricingPage)
+
 	// Middleware
 	api := app.Group("/api", logger.New())
 	api.Get("/", handler.Hello)

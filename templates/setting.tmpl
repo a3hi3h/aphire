@@ -1,0 +1,30 @@
+
+{{define "setting-content" }}
+<div class="mx-auto lg:mx-0 w-full pt-3 border-b-2 border-blue-500 ">
+  <h1 class="text-center text-3xl font-bold pt-8 lg:pt-0">Settings</h1>
+</div>
+<div class="flex content-center items-center justify-center w-full h-full space-x-6">
+    <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
+
+    </div>
+    <div  class=" content-center justify-center">
+      <img
+          src="/assets/img/setting.svg"
+          class="w-10/12"
+        />
+    </div>
+</div>
+
+{{end}}
+
+{{ define "setting" }}
+
+{{template "site-head" }}
+
+{{ template "app-sidebar"}}
+
+{{ template "setting-content" .}}
+
+</div> <!-- app sidebar-->
+
+{{end}}
