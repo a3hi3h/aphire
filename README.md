@@ -1,7 +1,3 @@
-# Fiber with Auth
-
-[Postman collection](https://www.getpostman.com/collections/c862d012d5dcf50326f7)
-
 ## Endpoints
 
 - GET /api - _Say hello_

@@ -12,6 +12,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt/v4"
+	"github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -50,6 +51,16 @@ func valid(email string) bool {
 	return err == nil
 }
 
+func CreateToken(user_id string) (string, error) {
+	claims := jwt.MapClaims{}
+	claims["authorized"] = true
+	claims["user_id"] = user_id
+	claims["exp"] = time.Now().Add(time.Hour * 1).Unix() //Token expires after 1 hour
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	return token.SignedString([]byte(config.Config("API_SECRET")))
+
+}
+
 // Login get user and password
 func Login(c *fiber.Ctx) error {
 	type LoginInput struct {
@@ -57,10 +68,10 @@ func Login(c *fiber.Ctx) error {
 		Password string `json:"password"`
 	}
 	type UserData struct {
-		ID       uint   `json:"id"`
-		Username string `json:"username"`
-		Email    string `json:"email"`
-		Password string `json:"password"`
+		ID       uuid.UUID `json:"id"`
+		Username string    `json:"username"`
+		Email    string    `json:"email"`
+		Password string    `json:"password"`
 	}
 	input := new(LoginInput)
 	var ud UserData
@@ -91,7 +102,7 @@ func Login(c *fiber.Ctx) error {
 
 	if email != nil {
 		ud = UserData{
-			ID:       email.ID,
+			ID:       email.BaseModel.ID,
 			Username: email.Username,
 			Email:    email.Email,
 			Password: email.Password,
@@ -100,7 +111,7 @@ func Login(c *fiber.Ctx) error {
 	}
 	if user != nil {
 		ud = UserData{
-			ID:       user.ID,
+			ID:       user.BaseModel.ID,
 			Username: user.Username,
 			Email:    user.Email,
 			Password: user.Password,

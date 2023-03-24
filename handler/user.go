@@ -46,10 +46,10 @@ func validUser(id string, p string) bool {
 
 // GetUser get a user
 func GetUser(c *fiber.Ctx) error {
-	id := c.Params("id")
+	username := c.Params("id")
 	db := database.DB
 	var user model.User
-	db.Find(&user, id)
+	db.Find(&user, username)
 	if user.Username == "" {
 		return c.Status(404).JSON(fiber.Map{"status": "error", "message": "No user found with ID", "data": nil})
 	}
@@ -67,7 +67,6 @@ func CreateUser(c *fiber.Ctx) error {
 	user := new(model.User)
 	if err := c.BodyParser(user); err != nil {
 		return c.Status(500).JSON(fiber.Map{"status": "error", "message": "Review your input", "data": err})
-
 	}
 
 	hash, err := hashPassword(user.Password)
