@@ -1,9 +1,9 @@
 package handler
 
 import (
-	"api-fiber-gorm/config"
-	"api-fiber-gorm/database"
-	"api-fiber-gorm/model"
+	"churnsight/config"
+	"churnsight/database"
+	"churnsight/model"
 	"errors"
 	"net/mail"
 	"time"

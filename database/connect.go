@@ -1,12 +1,13 @@
 package database
 
 import (
-	"api-fiber-gorm/config"
-	"api-fiber-gorm/model"
+	"churnsight/config"
+	"churnsight/model"
 	"fmt"
+	"strconv"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"strconv"
 )
 
 // ConnectDB connect to db

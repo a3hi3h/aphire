@@ -1,8 +1,8 @@
 package main
 
 import (
-	"api-fiber-gorm/database"
-	"api-fiber-gorm/router"
+	"churnsight/database"
+	"churnsight/router"
 	"log"
 
 	"github.com/gofiber/fiber/v2"
@@ -15,7 +15,7 @@ import (
 
 // @title Aperno Hiring API
 // @version 1.0
-// @description This is a Aperno API 
+// @description This is a Aperno API
 // @termsOfService http://swagger.io/terms/
 // @contact.name API Support
 // @contact.email fiber@swagger.io
@@ -41,5 +41,5 @@ func main() {
 	database.ConnectDB()
 
 	router.SetupRoutes(app)
-	log.Fatal(app.Listen(":8080"))
+	log.Fatal(app.Listen(":80"))
 }

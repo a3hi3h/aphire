@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  nginx-proxy:
+    restart: always
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/etc/nginx/vhost.d"
+      - "/usr/share/nginx/html"
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+      - "/etc/nginx/certs"
+
+  letsencrypt-nginx-proxy-companion:
+    restart: always
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    volumes_from:
+      - "nginx-proxy"
+
+  go-web-app:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: .
+    environment:
+      - VIRTUAL_HOST=localhost
+      - LETSENCRYPT_HOST=localhost
+      - DB_HOST=localhost
+      - DB_PORT=5432
+      - DB_USER=root
+      - DB_PASSWORD=secretpwd
+      - DB_NAME=aperno
+      - SECRET=
+      - API_SECRET=apisecretkey
+
+  db:
+    image: postgres:alpine
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: aperno
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: secretpwd
+      POSTGRES_HOST_AUTH_METHOD: trust
+
+volumes:
+  db-data:

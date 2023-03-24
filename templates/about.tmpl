@@ -1,7 +1,7 @@
 {{ define "about-content" }}
 
-<section class="relative py-16">
-   <div class="h-[10rem] dark:bg-gray-800">
+<section class="section hero py-5">
+  <div class="container">
       <div class="container px-6 py-10 mx-auto">
          <h1 class="text-3xl font-semibold text-center text-blue-500 capitalize lg:text-4xl dark:text-white">We solve hiring for you!</h1>
          <div class="flex justify-center mx-auto mt-6">
@@ -102,10 +102,6 @@
 {{template "site-head" .}}
 {{template "site-header" .}}
 
-<main>
-
-{{ template "about-content" .}}
-  
-</main>
+{{ template "partial/portfolio" .}}
 
 {{template "site-footer" .}}
