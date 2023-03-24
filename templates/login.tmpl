@@ -1,19 +1,15 @@
 {{define "login-content"}}
 
-<section class="relative py-16 ">
-   <div class="container px-6 py-12 h-full">
-      <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
-         <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
-            <img
-               src="/assets/img/phone.svg"
-               class="w-full"
-               alt="Phone image"
-               />
-         </div>
-         <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
-            <form class="user" method="post" novalidate>
+<section class="section hero py-5">
+  <div class="container">
+    <div class="row flex-column flex-xl-row-reverse">
+      <div class="col-12 col-xl-6  d-flex flex-column justify-content-center hero-image">  
+         <img class="img-fluid" src="/assets/img/phone.png" alt="assets/img/phone.png" width="1772" height="1773">
+      </div>
+      <div class="col-12 col-xl-6 d-flex flex-column justify-content-center">
+         <form class="user" method="post" novalidate>
                <!-- Email input -->
-               <div class="form-group mb-6">
+            <div class="form-group mb-6">
                   <input
                      type="email"
                      name="email"
@@ -21,17 +17,17 @@
                      class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                      placeholder="Email address"
                      />
-               </div>
-               <!-- Password input -->
-               <div class="mb-6">
+            </div>
+            <!-- Password input -->
+            <div class="mb-6">
                   <input
                      type="password"
                      name="password" value="{{ $.form.password }}"
                      class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                      placeholder="Password"
                      />
-               </div>
-               <div class="flex justify-between items-center mb-6">
+            </div>
+            <div class="flex justify-between items-center mb-6">
                   <div class="form-group form-check">
                      <input
                      type="checkbox"
@@ -48,7 +44,7 @@
                      class="text-gray-800 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out hover:underline"
                      >Forgot password?</a
                      >
-               </div>
+            </div>
                <!-- Submit button -->
                <button
                   type="submit"
@@ -60,8 +56,9 @@
                </button>
                <hr>
                <a href="/signup" class="text-gray-800 hover:text-blue-700 focus:text-blue-700 active:text-blue-700 duration-200 transition ease-in-out hover:underline" >Signup!</a>
-            </form>
-         </div>
+         </form>
+      </div>
+
       </div>
    </div>
 </section>

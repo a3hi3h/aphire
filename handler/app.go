@@ -20,3 +20,15 @@ func AboutPage(c *fiber.Ctx) error {
 		"Title": "Hello, World!",
 	})
 }
+
+func LoginPage(c *fiber.Ctx) error {
+	return c.Render("login", fiber.Map{
+		"Title": "Hello, World!",
+	})
+}
+
+func SignupPage(c *fiber.Ctx) error {
+	return c.Render("signup", fiber.Map{
+		"Title": "Hello, World!",
+	})
+}

@@ -1,76 +1,46 @@
 {{ define "pricing-content" }}
-<section class="section services py-5">
+
+<section class="section hero py-5">
   <div class="container">
-    <div class="row justify-content-center pb-5">
-      <div class="col-12 col-xl-6">
+    <div class="row flex-column flex-xl-row-reverse">
+<div class="col-12 col-xl-6  d-flex flex-column justify-content-center hero-image">
         
-          <h3 class="fs-1 fw-bold text-center text-primary pb-3">Our main services</h3>
-        
-        
-          <p class="text-black-61 text-center pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec quam nibh elit pellentesque velit netus suspendisse. Sed enim, pretium, montes, in ut dolor urna.</p>
-        
+  <img class="img-fluid" src="/assets/img/laptop.png" alt="assets/img/laptop.png" width="1772" height="1773">
+
+
       </div>
-    </div>
-    <div class="row g-5">
-      
-        <div class="col-12 col-xl-4">
-          <div class="card bg-blue-16 border-0 border-radius-34 p-4">
-            
-  <img class="img-fluid" src="https://writeonlyhugo.gitlab.io/up-business-demo/images/services-web-development.png" alt="images/services-web-development.png" width="1098" height="824">
+      <div class="col-12 col-xl-6 d-flex flex-column justify-content-center">
+        
+  
 
 
-            <div class="card-body text-center">
-              <h4 class="card-title text-center text-primary pb-4">Web development</h4>
-              <p class="card-text text-black-61 pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie in malesuada eget fames purus ligula luctus tellus. Habitant condimentum sit gravida praesent. </p>
-              <a class="btn btn-outline-primary px-4" href="#">Learn more</a>
-            </div>
-          </div>
+    
+          <h3 class="hero-title fw-bold  text-primary text-center text-xl-start pb-4">Reduce <strong>Customer Churn</strong> for your e-commerce business</h3>
+          <h3 class="hero-title fw-bold  text-primary text-center text-xl-start pb-4">Increase <strong>Profitability</strong> for your e-commerce business</h3>
+        
+          <p class="text-center text-black-61 text-xl-start pb-4">Leverage the power of machine learning and predictive analytics to identify at-risk customers and take proactuve steps to retain</p>
+        
+        <div class="d-flex flex-column flex-xl-row">
+          
+            <a class="btn btn-primary text-light px-4 my-1" href="/about">How we work</a>
+          
+          
+            <a class="btn btn-outline-primary px-4 my-1 ms-xl-4" href="https://cal.com/ashishmishra">Let's talk<span class="ms-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+</svg>
+</span></a>
+          
         </div>
-      
-        <div class="col-12 col-xl-4">
-          <div class="card bg-blue-16 border-0 border-radius-34 p-4">
-            
-  <img class="img-fluid" src="https://writeonlyhugo.gitlab.io/up-business-demo/images/services-web-development.png" alt="images/services-web-development.png" width="1098" height="824">
-
-
-            <div class="card-body text-center">
-              <h4 class="card-title text-center text-primary pb-4">Web development</h4>
-              <p class="card-text text-black-61 pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie in malesuada eget fames purus ligula luctus tellus. Habitant condimentum sit gravida praesent. </p>
-              <a class="btn btn-outline-primary px-4" href="#">Learn more</a>
-            </div>
-          </div>
-        </div>
-      
-        <div class="col-12 col-xl-4">
-          <div class="card bg-blue-16 border-0 border-radius-34 p-4">
-            
-  <img class="img-fluid" src="https://writeonlyhugo.gitlab.io/up-business-demo/images/services-web-development.png" alt="images/services-web-development.png" width="1098" height="824">
-
-
-            <div class="card-body text-center">
-              <h4 class="card-title text-center text-primary pb-4">Web development</h4>
-              <p class="card-text text-black-61 pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie in malesuada eget fames purus ligula luctus tellus. Habitant condimentum sit gravida praesent. </p>
-              <a class="btn btn-outline-primary px-4" href="#">Learn more</a>
-            </div>
-          </div>
-        </div>
-      
+      </div>
     </div>
   </div>
 </section>
-{{ end }} 
 
-{{ define "pricing" }}
+{{ end }} 
 
 {{template "site-head" .}}
 {{template "site-header" .}}
 
-<main>
-
 {{ template "pricing-content" .}}
-  
-</main>
 
 {{template "site-footer" .}}
-
-{{end}}

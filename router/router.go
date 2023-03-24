@@ -15,6 +15,8 @@ func SetupRoutes(app *fiber.App) {
 	app.Get("/", handler.HomePage)
 	app.Get("/about", handler.AboutPage)
 	app.Get("/pricing", handler.PricingPage)
+	app.Get("/login", handler.LoginPage)
+	app.Get("/signup", handler.SignupPage)
 
 	// Middleware
 	api := app.Group("/api", logger.New())
